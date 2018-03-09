@@ -11,15 +11,14 @@ export class HomePage {
   users: any;
 
   constructor(public navCtrl: NavController, public restProvider: RestProvider) {
-      this.getUsers();
-    }
+    this.getUsers();
+  }
 
-getUsers() {
+  getUsers() {
     this.restProvider.getUsers()
     .then(data => {
       this.users = data;
       console.log(this.users);
     });
   }
-
 }
